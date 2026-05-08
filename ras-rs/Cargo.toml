@@ -1,0 +1,12 @@
+[package]
+name = "ras-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+futures-util = "0.3.32"
+rocket = "0.5.1"
+rocket_ws = "0.1.1"
+saphyr = "0.0.6"
+tokio = { version = "1.52.2", features = ["full"] }
+tokio-pty-process = "0.4.0"
