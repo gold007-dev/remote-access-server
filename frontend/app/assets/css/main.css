@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@import "@xterm/xterm/css/xterm.css";
+
+html, body, #__nuxt {
+  height: 100%;
+}

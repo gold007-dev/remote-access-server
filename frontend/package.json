@@ -1,0 +1,30 @@
+{
+  "name": "ras-frontend",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "latest",
+    "@tailwindcss/vite": "latest",
+    "@xterm/addon-attach": "latest",
+    "@xterm/addon-fit": "latest",
+    "@xterm/xterm": "latest",
+    "http-proxy-middleware": "latest",
+    "nuxt": "latest",
+    "pinia": "latest",
+    "tailwindcss": "latest",
+    "vue": "latest",
+    "vue-router": "latest",
+    "ws": "^8.20.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "daisyui": "latest"
+  }
+}

@@ -1,0 +1,4 @@
+﻿users:
+  - id: 1
+    name: admin
+    password: $argon2id$v=19$m=19456,t=2,p=1$JVrt3S8aTRsU4auJ89TLoQ$jiENX0JTgZxTKLjEdKpEmqIvYrj0rmjhH5iHfEiKNs8 # argon2 hash of "password"

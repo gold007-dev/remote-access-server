@@ -4,9 +4,14 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+argon2 = "0.5.3"
+chrono = "0.4.44"
+futures = "0.3.32"
 futures-util = "0.3.32"
-rocket = "0.5.1"
+jsonwebtoken = { version = "10.4.0", features = ["rust_crypto"] }
+pty-process = { version = "0.5.3", features = ["async"] }
+rocket = { version = "0.5.1", features = ["json"] }
 rocket_ws = "0.1.1"
 saphyr = "0.0.6"
+serde = "1.0.228"
 tokio = { version = "1.52.2", features = ["full"] }
-tokio-pty-process = "0.4.0"
