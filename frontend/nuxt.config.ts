@@ -17,21 +17,21 @@ export default defineNuxtConfig({
         "@xterm/addon-attach",
       ],
     },
-    server: {
-      proxy: {
-        "/api": "http://172.17.0.1:1234",
-        // Proxy WebSocket requests
-        // "/terminal/ws": {
-        //   target: "ws://localhost:1234",
-        //   ws: true, // Important for WebSockets
-        //   changeOrigin: true,
-        //   rewrite: (path) => {
-        //     console.log("running");
-        //     return path;
-        //   },
-        // },
-      },
-    },
+    // server: {
+    //   proxy: {
+    //     "/api": "http://172.17.0.1:1234",
+    //     // Proxy WebSocket requests
+    //     // "/terminal/ws": {
+    //     //   target: "ws://localhost:1234",
+    //     //   ws: true, // Important for WebSockets
+    //     //   changeOrigin: true,
+    //     //   rewrite: (path) => {
+    //     //     console.log("running");
+    //     //     return path;
+    //     //   },
+    //     // },
+    //   },
+    // },
   },
   css: ["~/assets/css/main.css"],
   modules: ["@pinia/nuxt"],
@@ -39,6 +39,11 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       websocket: true,
+    },
+    routeRules: {
+      "/api/**": {
+        proxy: "http://localhost:1234/api/**",
+      },
     },
   },
 });

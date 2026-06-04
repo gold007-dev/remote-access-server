@@ -1,0 +1,7 @@
+[Unit]
+Description=Remote Access Server
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/apps/remote-access-server
+ExecStart=./start.sh

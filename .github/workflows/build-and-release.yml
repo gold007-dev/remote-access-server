@@ -1,0 +1,30 @@
+name: build image
+
+on: workflow_dispatch
+
+# curl zip
+# - start.sh
+# - ras-rs
+# - ras.service
+# - docker-compose.yml (includes built frontend ghcr image)
+# - users.yaml
+# - Rocket.toml
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repositories
+        uses: actions/checkout@v4
+      - name: build ras-rs
+        run: cd ras-rs && cargo build -r
+      - name: create required-files folder
+        run: mkdir required-files
+      - name: copy all files to release dir
+        run: cp start.sh target/release/ras-rs ras.service docker-compose.yml ras-rs/users.yaml ras-rs/Rocket.toml required-files
+      - name: compress to tar.gz
+        run: tar -czf ./required-files.tar.gz ./required-files
+      - name: Create Release
+        uses: ncipollo/release-action@main
+        with:
+          artifactErrorsFailBuild: true
+          artifacts: "required-files.tar.gz,setup.sh"
