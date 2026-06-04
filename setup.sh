@@ -15,7 +15,11 @@ wget https://github.com/gold007-dev/remote-access-server/releases/download/#TAG#
 # - users.yaml
 # - Rocket.toml
 
-tar -xvzf required-files.tar.gz -C .
+tar -xvzf required-files.tar.gz
+
+mv required-files/* .
+
+rmdir required-files
 
 cp ras.service ~/.config/systemd/user/
 
