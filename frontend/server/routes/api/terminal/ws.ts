@@ -4,6 +4,7 @@ import WebSocket from "ws";
 
 export default defineWebSocketHandler({
   open(peer) {
+    console.log("received ws request");
     // 1. Get the 'Cookie' header from the client's handshake request.
     const cookieHeader = peer.request.headers.get("cookie");
     if (!cookieHeader) {
@@ -13,11 +14,14 @@ export default defineWebSocketHandler({
     }
 
     // 2. Establish the connection to your Rocket backend, forwarding the cookie.
-    const backendSocket = new WebSocket("ws://localhost:1234/api/terminal/ws", {
-      headers: {
-        Cookie: cookieHeader,
+    const backendSocket = new WebSocket(
+      "ws://host.docker.internal:1234/api/terminal/ws",
+      {
+        headers: {
+          Cookie: cookieHeader,
+        },
       },
-    });
+    );
 
     // 3. Store the backend connection in the peer's context.
     peer.context.backendSocket = backendSocket;
