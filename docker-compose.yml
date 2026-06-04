@@ -1,10 +1,10 @@
 name: ras1234
 services:
   frontend:
-    # image: ghcr.io/gold007-dev/ras-frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: ghcr.io/gold007-dev/ras-frontend
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile
     ports:
       - 12345:3000
     extra_hosts:
