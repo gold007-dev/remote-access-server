@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     },
     routeRules: {
       "/api/**": {
-        proxy: "http://localhost:1234/api/**",
+        proxy: "http://host.docker.internal:1234/api/**",
       },
     },
   },

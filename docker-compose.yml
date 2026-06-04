@@ -4,3 +4,5 @@ services:
     image: ghcr.io/gold007-dev/ras-frontend
     ports:
       - 12345:3000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
