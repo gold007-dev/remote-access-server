@@ -1,6 +1,12 @@
 name: build image
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        description: the tag used for the release
+        required: true
 
 # curl zip
 # - start.sh
@@ -28,6 +34,7 @@ jobs:
         with:
           artifactErrorsFailBuild: true
           artifacts: "required-files.tar.gz,setup.sh"
+          tag: ${{inputs.tag}}
   build-frontend-image:
     runs-on: ubuntu-latest
     steps:
@@ -50,7 +57,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./frontend
-          file: ./Dockerfile
+          file: ./frontend/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
