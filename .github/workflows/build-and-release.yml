@@ -26,7 +26,7 @@ jobs:
       - name: Rust Cache
         uses: Swatinem/rust-cache@v2.9.1
         with:
-          cache-directories: "ras-rs"
+          workspaces: "ras-rs"
       - name: build ras-rs
         run: cd ras-rs && cargo build -r
       - name: create required-files folder
