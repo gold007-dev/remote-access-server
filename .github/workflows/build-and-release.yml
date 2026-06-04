@@ -29,6 +29,8 @@ jobs:
         run: cd ras-rs && cargo build -r
       - name: create required-files folder
         run: mkdir required-files
+      - name: replace wget placeholder with actual tag
+        run: sed -i 's/#TAG#/tag/' setup.sh
       - name: copy all files to release dir
         run: cp start.sh ras-rs/target/release/ras-rs ras.service docker-compose.yml ras-rs/users.yaml ras-rs/Rocket.toml required-files
       - name: compress to tar.gz

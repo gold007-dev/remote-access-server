@@ -6,6 +6,7 @@ cd /opt/apps/remote-access-server
 
 printf "APP_ID=1234\nAPP_PORT=12345\nAPP_HOST=ras1234.gbssg.russos.ch">.env
 
+wget https://github.com/gold007-dev/remote-access-server/releases/download/#TAG#/required-files.tar.gz
 # curl zip
 # - start.sh
 # - ras-rs
