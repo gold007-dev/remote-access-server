@@ -18,8 +18,11 @@ wget https://github.com/gold007-dev/remote-access-server/releases/download/#TAG#
 tar -xvzf required-files.tar.gz
 
 mv required-files/* .
-
 rmdir required-files
+
+chmod 777 start.sh
+
+mkdir -p ~/.config/systemd/user/
 
 cp ras.service ~/.config/systemd/user/
 

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ras-rs
+./ras-rs
