@@ -4,7 +4,7 @@ mkdir -p /opt/apps/remote-access-server
 
 cd /opt/apps/remote-access-server
 
-printf "APP_ID=123\nAPP_PORT=123\nAPP_HOST=ras123.gbssg.russos.ch">.env
+printf "APP_ID=1234\nAPP_PORT=12345\nAPP_HOST=ras1234.gbssg.russos.ch">.env
 
 # curl zip
 # - start.sh

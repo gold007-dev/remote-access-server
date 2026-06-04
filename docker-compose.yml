@@ -1,0 +1,6 @@
+name: ras1234
+services:
+  frontend:
+    image: ghcr.io/gold007-dev/ras-frontend
+    ports:
+      - 12345:3000
