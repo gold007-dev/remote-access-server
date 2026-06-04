@@ -31,6 +31,10 @@ jobs:
   build-frontend-image:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repositories
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Login ghcr.io
         uses: docker/login-action@v3
         with:
