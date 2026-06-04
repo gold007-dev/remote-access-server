@@ -32,7 +32,7 @@ jobs:
       - name: create required-files folder
         run: mkdir required-files
       - name: replace wget placeholder with actual tag
-        run: sed -i 's/#TAG#/tag/' setup.sh
+        run: sed -i 's/#TAG#/${{inputs.tag}}/' setup.sh
       - name: copy all files to release dir
         run: cp start.sh ras-rs/target/release/ras-rs ras.service docker-compose.yml ras-rs/users.yaml ras-rs/Rocket.toml required-files
       - name: compress to tar.gz
@@ -43,6 +43,7 @@ jobs:
           artifactErrorsFailBuild: true
           artifacts: "required-files.tar.gz,setup.sh"
           tag: ${{inputs.tag}}
+          bodyFile: ./release-body.md
   build-frontend-image:
     runs-on: ubuntu-latest
     steps:
